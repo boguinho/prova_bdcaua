@@ -1,0 +1,56 @@
+create database mecanica;
+
+use mecanica;
+
+create table veiculo(
+	id int not null auto_increment, primary key(id),
+    placa varchar(100) not null,
+    modelo varchar(100) not null,
+    ano varchar(100) not null,
+    cor varchar(100) not null
+    );
+    
+  create table cliente(
+	id int not null auto_increment, primary key(id),
+    nome varchar(100) not null,
+    telefone varchar(100) not null,
+    email varchar(100) not null
+	);
+    
+    create table mecanico(
+    id int not null auto_increment, primary key(id),
+    nome varchar(100) not null,
+    especialidade varchar(100) not null
+    );
+    
+    create table servico(
+    id int not null auto_increment, primary key(id),
+    descrição varchar(100) not null,
+    preco varchar (100) not null
+    );
+    
+    create table ordem_servico(
+    id int not null auto_increment, primary key(id),
+    veiculo_id varchar (100) not null,
+    cliente_id varchar(100) not null,
+    data_abertura varchar(100) not null,
+	disponivel varchar(100) not null
+    );
+    
+    insert into veiculo (placa, modelo, ano, cor)values('ABC-1234', 'Fiesta', '2018', 'Prata');
+    
+    select * from veiculo;
+    
+    insert into cliente (nome, telefone)values('Carlos', '123456789');
+    
+    select * from cliente;
+    
+    insert into mecanico (nome, especialidade)values('João', 'Motor');
+    
+    select * from mecanico;
+    
+    insert into servico (descrição, preco)values('Troca de oleo', '150.00');
+    
+    select * from servico;
+    
+    insert into ordem_serviço (veiculo_id,  cliente_id, data_abertura
